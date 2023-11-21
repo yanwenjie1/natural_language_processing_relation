@@ -266,8 +266,8 @@ def get_relation_result_confi(entity_tensor, relation_tensor, fun: dict):
             if fun.get(relation_key, '没有此键') != '没有此键':
                 if relation_tensor[0, fun[relation_key], subject[1], object[1]] > 0 and \
                         relation_tensor[0, fun[relation_key] + num_relation, subject[2], object[2]] > 0:
-                    confi1 = float(torch.sigmoid(relation_tensor[subject[0], fun[relation_key], subject[1], object[1]]).item())
-                    confi2 = float(torch.sigmoid(relation_tensor[subject[0], fun[relation_key] + num_relation, subject[2], object[2]]).item())
+                    confi1 = float(torch.sigmoid(relation_tensor[0, fun[relation_key], subject[1], object[1]]).item())
+                    confi2 = float(torch.sigmoid(relation_tensor[0, fun[relation_key] + num_relation, subject[2], object[2]]).item())
                     relation_reault.append([fun[relation_key], index_sub, index_obj, confi1*confi2])
     return entity_result, relation_reault
 
