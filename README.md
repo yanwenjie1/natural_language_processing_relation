@@ -62,3 +62,6 @@ pip install gevent
 3.建议核查执行preprocess.py获得的3个json文件，尤其是【fun_map.json】，指示了关系与实体的对应关系
 4.原则上讲，同一个关系的主体，客体类型都是唯一的，对于不唯一的情况，计划后续版本优化
 ```
+
+ # 更新日志
+ - 2023-11-21：修复了functions.py下get_relation_result_confi函数的bug
